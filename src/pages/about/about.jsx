@@ -40,7 +40,7 @@ export default function About() {
     return (
         <>
             <div className="about_container">
-                <Navbar lnav1={link1} nav1="Home" nav2="Products" lnav3="/pricing-and-packages" nav3="Pricing" nav4="Contact Us" />
+                <Navbar lnav1={link1} nav1="Home" nav2="Products" lnav3="/pricing-and-packages" nav3="Pricing" nav4="Contact Us" nav5="Partnership" nav6="Shipping Partners" />
                 <div className="about_main">
                     <section className='intro'>
                         <div className="heading">

@@ -51,7 +51,7 @@ const PricingPage = () => {
 
     return (<>
         <div className="price-container">
-            <Navbar lnav1="/" nav1="Home" lnav2="/about" nav2="About" nav3="Blogs" nav4="Contact Us" />
+            <Navbar lnav1="/" nav1="Home" lnav2="/about" nav2="About" nav3="Blogs" nav4="Contact Us" nav5="Partnership" nav6="Shipping Partners" />
             <div className="main">
                 <div className="heading">
                     <h1>Our Packages</h1>

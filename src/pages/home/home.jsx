@@ -13,7 +13,7 @@ function HomePage() {
     const pricing = '/pricing-and-packages'
 
     return (<>
-        <Navbar lnav1={about} nav1="About" nav2="Products" lnav3={pricing} nav3="SME Solutions" nav4="Contact Us" />
+        <Navbar lnav1={about} nav1="About" nav2="Templates" lnav3={pricing} nav3="Pricing" nav4="Contact Us" nav5="Partnership" nav6="Shipping Partners" />
         <div className="home-container">
             <div className="main">
                 <HeroPage1 h1="Ready to take your business to the" span="Next Level?" caption="Join businesses, startups, brands, and solo entreprenuers who are growing their brands with Mexuri" heroBtnText="Get Started" />

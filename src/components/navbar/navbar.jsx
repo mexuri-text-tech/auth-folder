@@ -53,6 +53,8 @@ export default function Navbar(props) {
                         <li><Link to={props.lnav2}>{props.nav2}</Link></li>
                         <li><Link to={props.lnav3}>{props.nav3}</Link></li>
                         <li><Link to={props.lnav4}>{props.nav4}</Link></li>
+                        <li><Link to={props.lnav5}>{props.nav5}</Link></li>
+                        <li><Link to={props.lnav6}>{props.nav6}</Link></li>
                     </ul>
                 </div>
 
@@ -96,6 +98,8 @@ export default function Navbar(props) {
                     <li><Link to={props.lnav2}>{props.nav2}</Link></li>
                     <li><Link to={props.lnav3}>{props.nav3}</Link></li>
                     <li><Link to={props.lnav4}>{props.nav4}</Link></li>
+                    <li><Link to={props.lnav5}>{props.nav5}</Link></li>
+                    <li><Link to={props.lnav6}>{props.nav6}</Link></li>
                 </ul>
             </div>
 

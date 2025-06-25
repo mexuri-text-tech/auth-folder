@@ -20,6 +20,11 @@
         max-width: 500px;
         @include Flex(column, center, center);
 
+        @media (max-width: 900px) {
+            width: 80vw;
+            max-width: fit-content;
+        }
+
         .head-class {
             margin: 1rem auto;
             text-align: center;
@@ -31,6 +36,10 @@
                     font-weight: 600;
                     font-size: 2rem;
                     color: $mexuri-gold;
+
+                    @media (max-width: 900px) {
+                        font-size: 2.3rem;
+                    }
                 }
             }
 
@@ -44,7 +53,7 @@
 
         .input-class {
             width: 100%;
-            padding: 1rem;
+            padding: 0 0 1rem 0;
 
             .name {
                 width: 100%;
@@ -90,6 +99,10 @@
                     -moz-appearance: none;
                     -webkit-appearance: none;
                     border-radius: 1rem;
+
+                    @media (max-width: 900px) {
+                        width: 380px;
+                    }
                 }
             }
 
@@ -112,6 +125,10 @@
                     -webkit-appearance: none;
                     padding: 1rem;
                     border-radius: 1rem;
+
+                    @media (max-width: 900px) {
+                        width: 380px;
+                    }
                 }
             }
         }
@@ -135,6 +152,10 @@
                 line-height: 1.5;
                 font-size: 1.2rem;
                 color: lighten($primary-white, 10);
+
+                @media (max-width: 900px) {
+                    font-size: 1rem;
+                }
 
                 a {
                     color: $mexuri-gold;
@@ -164,6 +185,10 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease, transform 0.2s ease;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                @media (max-width: 900px) {
+                    width: 350px;
+                }
 
                 &:hover {
                     background-color: darken($mexuri-gold, 15);
