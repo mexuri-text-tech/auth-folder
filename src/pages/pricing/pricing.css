@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.price-container {
+  padding: 4rem 2rem;
+}
+.price-container .main {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1600px;
+}
+.price-container .main .heading h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+}
+.price-container .main .heading p {
+  font-size: 1rem;
+  color: #f2f2f2;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.price-container .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 4rem auto;
+  justify-content: center;
+}
+.price-container .pricing-card {
+  background: #1a1a1a;
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+}
+.price-container .pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+.price-container .pricing-card .price-head .title h2 {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.price-container .pricing-card .price-head .price h1 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+@media (max-width: 900px) {
+  .price-container .pricing-card .price-head .price h1 {
+    font-size: 2.5rem;
+  }
+}
+.price-container .pricing-card .price-head .price h1 span {
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  font-weight: normal;
+}
+.price-container .pricing-card .price-head .price p {
+  font-size: 0.9rem;
+  color: #e6e6e6;
+  margin-top: 0.5rem;
+}
+.price-container .pricing-card .features {
+  margin-top: 1.5rem;
+  background: #1a1a1a;
+}
+.price-container .pricing-card .features ul {
+  list-style: none;
+  padding: 0;
+}
+.price-container .pricing-card .features ul li {
+  padding: 0.5rem 0;
+  color: #e6e6e6;
+}
+.price-container .pricing-card .features ul li::before {
+  content: "✔︎";
+  margin: 0 0.4rem 0 0;
+}
+.price-container .pricing-card .features ul li:last-child {
+  border-bottom: none;
+}
+.price-container .pricing-card .button {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.price-container .pricing-card .button a {
+  width: 100%;
+}
+.price-container .pricing-card .button a .packageBtn {
+  background-color: #ffd700;
+  color: #000000;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.price-container .pricing-card .button a .packageBtn:hover {
+  background-color: #e6c200;
+}
+.price-container .pricing-card .button .priceBtn {
+  background-color: #ffd700;
+  color: #000000;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.price-container .pricing-card .button .priceBtn:hover {
+  background-color: #e6c200;
+}/*# sourceMappingURL=pricing.css.map */

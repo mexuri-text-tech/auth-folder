@@ -1,0 +1,146 @@
+@use '../../../lib' as *;
+
+//Mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.features {
+    background: linear-gradient(135deg, darken($brown-accent, 40), darken($grey-accent, 65));
+    width: 100%;
+    margin: 0.15rem auto;
+
+    @media (max-width: 900px) {
+        margin: 0.2rem auto;
+        height: 100%;
+        max-height: max-content;
+    }
+
+    .main {
+        @include Flex(column, center, center);
+
+        .header {
+            padding: 2rem 0;
+            @include Flex(row, space-between, flex-end);
+            margin: 0;
+            width: 100%;
+
+            @media (max-width: 900px) {
+                @include Flex(column, space-between, flex-end);
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+                color: $primary-white;
+                font-weight: 500;
+                display: flex;
+                text-align: left;
+                flex-direction: column;
+                margin-left: 1rem;
+
+                span {
+                    font-size: 4rem;
+                    color: $mexuri-gold;
+                    font-weight: 600;
+                    margin-left: 0;
+                }
+
+                @media (max-width: (900px)) {
+                    font-size: 2rem;
+                    width: 100%;
+                    text-align: center;
+
+                    span {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            p {
+                color: darken($primary-white, 30);
+                font-size: 1rem;
+                padding: 0 0 1rem 0;
+                width: 600px;
+                font-size: 1.1rem;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: $primary-white;
+                }
+
+                @media (max-width: 900px) {
+                    width: 100%;
+                    padding: 0;
+                    text-align: center;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem 0;
+            width: 100%;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .features-card {
+            border-radius: 0.5rem;
+            background: linear-gradient(135deg, darken($grey-accent, 65), darken($brown-accent, 28));
+            margin: 0.5rem 1rem;
+            padding: 1.4rem;
+            height: 27rem;
+            @include Flex(column, center, center);
+            border-top: 3px solid $mexuri-gold;
+            transition: all 0.2s ease-in-out, box-shadow 0.3s ease;
+
+            @media (max-width: 900px) {
+                width: 70%;
+            }
+
+            .feature-image {
+                width: 100%;
+                overflow: hidden;
+                border-radius: 0.5rem 0.5rem 0 0;
+
+                img {
+                    width: 100%;
+                    height: 250px;
+                    object-fit: cover;
+                    border-radius: 0.5rem 0.5rem 0 0;
+                    transition: all 0.3s ease-in-out;
+                    box-shadow: 0 0 1px lighten($grey-accent, 5);
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+
+            .feature-name {
+
+                h1 {
+                    color: darken($mexuri-gold, 5);
+                    padding: 1rem 0 0.5rem 0;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+            }
+
+            .feature-description {
+                p {
+                    color: darken($primary-white, 20);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,258 @@
+@charset "UTF-8";
+.value-prop {
+  color: white;
+  width: 100%;
+  margin: 0.2rem auto 0 auto;
+  background: linear-gradient(135deg, #0d0d0d, black, #0a0900);
+}
+@media (max-width: 900px) {
+  .value-prop {
+    margin: 0.2rem auto;
+  }
+}
+.value-prop .main .header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 4.5rem;
+}
+@media (min-width: 270px) and (max-width: 760px) {
+  .value-prop .main .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.value-prop .main .header .allP {
+  width: 550px;
+  padding: 0 0 1rem 0;
+  color: #cccccc;
+  font-size: 1.2rem;
+}
+@media (min-width: 270px) and (max-width: 760px) {
+  .value-prop .main .header .allP {
+    display: none;
+  }
+}
+.value-prop .main .header .mobileP {
+  width: 100%;
+  padding: 0;
+  color: #cccccc;
+  font-size: 1.2rem;
+  text-align: center;
+  display: none;
+}
+@media (min-width: 270px) and (max-width: 760px) {
+  .value-prop .main .header .mobileP {
+    display: block;
+  }
+}
+.value-prop .main .header h1 {
+  color: #FFFFFF;
+  text-align: right;
+  font-size: 4rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+.value-prop .main .header h1 span {
+  color: #ffd700;
+  font-weight: 600;
+}
+@media (min-width: 270px) and (max-width: 760px) {
+  .value-prop .main .header h1 {
+    font-size: 2.3rem;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+}
+.value-prop .main .feats {
+  width: 100;
+}
+.value-prop .main .feats .web {
+  width: 95%;
+  margin: 4rem auto;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web {
+    margin: 0 auto;
+  }
+}
+.value-prop .main .feats .web figure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #121110;
+  margin: 3rem 0;
+  padding: 3rem;
+  border-radius: 2rem;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+.value-prop .main .feats .web figure figcaption {
+  width: 500px;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure figcaption {
+    width: 90%;
+  }
+}
+.value-prop .main .feats .web figure figcaption h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffd700;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure figcaption h1 {
+    font-size: 2.3rem;
+  }
+}
+.value-prop .main .feats .web figure figcaption p {
+  font-size: 1.2rem;
+  color: #cccccc;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure figcaption p {
+    font-size: 1.2rem;
+  }
+}
+.value-prop .main .feats .web figure figcaption button {
+  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: #ebc600;
+  font-weight: 600;
+  color: #000000;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure figcaption button {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+  }
+}
+.value-prop .main .feats .web figure figcaption button::after {
+  content: "";
+  transition: all 0.3s ease-in-out;
+}
+.value-prop .main .feats .web figure figcaption button:hover::after {
+  content: "→";
+  padding: 0 0 0 1rem;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure figcaption button:hover::after {
+    padding: 0 0 0 0.5rem;
+  }
+}
+.value-prop .main .feats .web figure figcaption button:active {
+  background-color: #e6c200;
+  transform: scale(0.95);
+}
+.value-prop .main .feats .web figure .fig-image video {
+  width: 600px;
+  border-radius: 3rem;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .web figure .fig-image video {
+    width: 100%;
+    max-height: 512px;
+  }
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .others {
+    margin: 0 auto;
+  }
+}
+.value-prop .main .feats .others .figure-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 4rem 0;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .others .figure-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.value-prop .main .feats .others .figure-grid .fig1,
+.value-prop .main .feats .others .figure-grid .fig2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  background: #121110;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+@media (max-width: 900px) {
+  .value-prop .main .feats .others .figure-grid .fig1,
+  .value-prop .main .feats .others .figure-grid .fig2 {
+    width: 75%;
+    margin: 2rem 0;
+  }
+}
+.value-prop .main .feats .others .figure-grid .fig1 .fig-image,
+.value-prop .main .feats .others .figure-grid .fig2 .fig-image {
+  overflow: hidden;
+}
+.value-prop .main .feats .others .figure-grid .fig1 .fig-image img,
+.value-prop .main .feats .others .figure-grid .fig2 .fig-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.value-prop .main .feats .others .figure-grid .fig1 .fig-image img:hover,
+.value-prop .main .feats .others .figure-grid .fig2 .fig-image img:hover {
+  transform: scale(1.1);
+}
+.value-prop .main .feats .others .figure-grid .fig1 figcaption .tag,
+.value-prop .main .feats .others .figure-grid .fig2 figcaption .tag {
+  position: absolute;
+  margin: -3.6rem 0 0 0;
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: rgba(0, 0, 0, 0.763);
+}
+.value-prop .main .feats .others .figure-grid .fig1 figcaption .tag p,
+.value-prop .main .feats .others .figure-grid .fig2 figcaption .tag p {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  color: #ffd700;
+}
+.value-prop .main .feats .others .figure-grid .fig1 figcaption h1,
+.value-prop .main .feats .others .figure-grid .fig2 figcaption h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem auto;
+  text-align: center;
+  color: #ffd700;
+}
+.value-prop .main .feats .others .figure-grid .fig1 figcaption p,
+.value-prop .main .feats .others .figure-grid .fig2 figcaption p {
+  text-align: center;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=feat2.css.map */

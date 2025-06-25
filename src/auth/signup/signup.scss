@@ -1,0 +1,302 @@
+@use '../../lib/' as *;
+
+.signup-page {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .main {
+        display: flex;
+        width: 80%;
+        max-width: 1600px;
+        height: 80vh;
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: lighten($primary-black, 10);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+        //ipads pro
+        @media (min-width: 1000px) and (max-width: 1400px) {
+            width: 95%;
+            height: 55vh;
+        }
+
+        @media (min-width: 900px) and (max-width: 999px) {
+            flex-direction: column;
+            height: 90vh;
+            background-color: $primary-black;
+            width: 100%;
+        }
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            height: 90vh;
+            background-color: $primary-black;
+            width: 100%;
+        }
+
+        .left {
+            padding: 2rem;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 900px) {
+                padding: 0 1rem;
+            }
+
+            @media (min-width: 900px) and (max-width: 999px) {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                margin-bottom: 2rem;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    width: 150px;
+
+                    @media (max-width: 900px) {
+                        width: 100px;
+                    }
+                }
+            }
+
+            .header {
+                margin: 0 auto 2rem auto;
+
+                h1 {
+                    color: $primary-white;
+                    font-size: 2.5rem;
+                    margin-bottom: 0.5rem;
+                    text-align: center;
+                    font-weight: 600;
+
+                    @media (max-width: 900px) {
+                        font-size: 1.8rem;
+                    }
+
+                    @media (min-width: 900px) and (max-width: 999px) {
+                        font-size: 1.8rem;
+                    }
+
+                    //ipads pro
+                    @media (min-width: 1000px) and (max-width: 1400px) {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                p {
+                    color: darken($primary-white, 10);
+                    font-size: 1.5rem;
+                    text-align: center;
+
+                    @media (max-width: 900px) {
+                        font-size: 1.2rem;
+                        text-align: center;
+                    }
+
+                    @media (min-width: 900px) and (max-width: 999px) {
+                        font-size: 1.2rem;
+                        text-align: center;
+                    }
+
+                    //ipads pro
+                    @media (min-width: 1000px) and (max-width: 1400px) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            form {
+                margin: 0 auto;
+                max-width: 500px;
+
+                #input-error {
+                    border: 2px solid $mexuri-gold;
+                }
+
+                .emailSpan {
+                    font-weight: 500;
+                    font-size: 1.4rem;
+                    color: $mexuri-gold;
+
+                    @media (max-width: 900px) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .email {
+                    display: flex;
+                    align-items: center;
+                    background-color: lighten($primary-black, 20);
+                    border-radius: 8px;
+                    padding: 0.8rem 1rem;
+                    margin-bottom: 1rem;
+
+                    @media (max-width: 900px) {
+                        padding: 0.5rem 0.8rem;
+                    }
+
+                    .icon {
+                        margin-right: 1rem;
+
+                        svg {
+                            fill: darken($primary-white, 10);
+                        }
+                    }
+
+                    input {
+                        background: transparent;
+                        border: 0;
+                        width: 400px;
+                        color: $primary-white;
+                        font-size: 1.4rem;
+                        outline: none;
+
+                        &:-webkit-autofill,
+                        &:-webkit-autofill:hover,
+                        &:-webkit-autofill:focus,
+                        &:-webkit-autofill:active {
+                            transition: background-color 5000s ease-in-out 0s;
+                            -webkit-text-fill-color: $primary-white !important;
+                        }
+
+
+                        &::placeholder {
+                            color: darken($primary-white, 10);
+                        }
+
+                        @media (max-width: 900px) {
+                            width: 70vw;
+                            font-size: 1.1rem;
+                        }
+                    }
+                }
+
+                .submit-button {
+                    margin-bottom: 1.5rem;
+
+                    button {
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                        padding: 0.8rem 1rem;
+                        border-radius: 8px;
+                        border: none;
+                        background-color: $mexuri-gold;
+                        color: $primary-black;
+                        font-weight: bold;
+                        font-size: 1.3rem;
+                        cursor: pointer;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            background-color: darken($mexuri-gold, 10%);
+                        }
+
+                        @media (max-width: 900px) {
+                            width: 90%;
+                            padding: 0.7rem;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+
+                .or {
+                    display: flex;
+                    align-items: center;
+                    color: darken($primary-white, 10);
+                    margin-bottom: 1.5rem;
+                    font-size: 1.5rem;
+
+                    @media (max-width: 900px) {
+                        font-size: 1.2rem;
+                    }
+
+                    hr {
+                        flex: 1;
+                        border: none;
+                        border-top: 1px solid $primary-white;
+                        margin: 0 1rem;
+                    }
+                }
+
+                .alt-auth {
+                    button {
+                        width: 100%;
+                        padding: 1rem;
+                        border-radius: 8px;
+                        border: 1px solid $primary-white;
+                        background-color: transparent;
+                        color: $primary-white;
+                        font-size: 1.3rem;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: background-color 0.3s;
+
+                        &:hover {
+                            color: $primary-black;
+                            background-color: darken($primary-white, 0.1);
+                            border: none;
+
+                            svg,
+                            span {
+                                filter: drop-shadow(0 1px 0.3px $primary-black);
+                            }
+                        }
+
+                        @media (max-width: 900px) {
+                            width: 90%;
+                            padding: 0.7rem;
+                            margin: 0 auto;
+                        }
+
+                        :active {
+                            transform: scale(0.98);
+                            color: $primary-black;
+                        }
+
+                        svg {
+                            padding: 0 1rem 0 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            flex: 1;
+            max-width: 50%;
+            min-width: 50%;
+
+            @media (max-width: 900px) {
+                display: none;
+            }
+
+            @media (min-width: 900px) and (max-width: 999px) {
+                display: none;
+            }
+
+            .main {
+                height: 100%;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+}

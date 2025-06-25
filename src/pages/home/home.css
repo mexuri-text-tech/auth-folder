@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+}
+
+.home-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  background-color: rgb(255, 208, 0);
+}/*# sourceMappingURL=home.css.map */

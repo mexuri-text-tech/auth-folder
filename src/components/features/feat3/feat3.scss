@@ -1,0 +1,154 @@
+@use '../../../lib' as *;
+
+.feat3 {
+    padding: 4rem 2rem;
+    margin: 0.2rem auto 0 auto;
+    background: linear-gradient(145deg, darken($grey-accent, 72), lighten($primary-black, 10));
+
+    figure {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 3rem;
+        margin: 0 auto;
+        align-items: center;
+
+        .fig-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            img {
+                width: 100%;
+                height: auto;
+                display: block;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        figcaption {
+            h1 {
+                font-size: 2.7rem;
+                color: $mexuri-gold;
+                margin-bottom: 1.5rem;
+                line-height: 1.3;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 160px;
+                    height: 4px;
+                    background: $mexuri-gold;
+                    margin: 1rem 0 2rem;
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            ol {
+                counter-reset: mexuri-counter;
+                padding-left: 0;
+                list-style: none;
+                align-items: center;
+                margin-bottom: 2.5rem;
+
+                li {
+                    counter-increment: mexuri-counter;
+                    position: relative;
+                    padding-left: 3.5rem;
+                    margin-bottom: 1.5rem;
+                    line-height: 1.6;
+                    color: darken($primary-white, 10);
+                    font-size: 1.4rem;
+
+                    &::before {
+                        content: counter(mexuri-counter);
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        background: lighten($mexuri-gold, 5);
+                        color: $primary-black;
+                        width: 2.7rem;
+                        height: 2.7rem;
+                        padding: 0.1rem;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 1.5rem;
+                    }
+
+                    &:nth-child(2)::before {
+                        background: lighten($mexuri-gold, 5);
+                    }
+
+                    &:nth-child(3)::before {
+                        background: lighten($mexuri-gold, 5);
+                    }
+                }
+            }
+
+            .button {
+                margin: 2rem 0 0 0;
+
+                .templateBtn {
+                    background: $mexuri-gold;
+                    border: none;
+                    padding: 0.8rem 2rem;
+                    font-size: 1.2rem;
+                    border-radius: 30px;
+                    color: $primary-black;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+
+                    @media (max-width: 900px) {
+                        padding: 0.8rem 2rem;
+                        font-size: 1rem;
+                    }
+
+                    &:hover {
+                        transform: translateY(-3px);
+                    }
+
+                    &:active {
+                        background-color: darken($mexuri-gold, 5);
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: 2rem 1rem;
+
+        figure {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+
+            figcaption {
+                h1 {
+                    font-size: 2rem;
+                }
+
+                ol {
+
+                    li {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            .fig-image {
+                order: -1;
+            }
+        }
+    }
+}

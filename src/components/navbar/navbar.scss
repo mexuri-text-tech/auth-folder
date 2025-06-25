@@ -1,0 +1,259 @@
+@use '../../lib' as *;
+
+//Mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.navbar-container {
+    width: 100%;
+    padding: 0.8rem 0;
+    backdrop-filter: blur(35px);
+    background-color: rgba(0, 0, 0, 0.48);
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+
+    @media (max-width: 900px) {
+        display: none;
+    }
+
+    .nav-main {
+        @include Flex(row, space-between, center);
+        margin: 0.5rem 1rem;
+        max-width: 1400px;
+        margin: 0 auto;
+
+        img {
+            width: 100px;
+            margin: 0 0.5rem;
+        }
+
+        .nav-links {
+            ul {
+                @include Flex(row, space-between, center);
+                margin: 0 auto;
+
+                @media (max-width: 900px) {
+                    display: none;
+                }
+
+                li {
+                    margin: 0 1.6rem;
+                    list-style: none;
+                    font-size: 1.1rem;
+
+                    a {
+                        text-decoration: none;
+                        color: $primary-white;
+                        font-weight: 500;
+                        transition: all 0.1s ease-in-out;
+
+                        &:hover {
+                            color: $mexuri-gold;
+                            font-weight: 600;
+
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        &::after {
+                            content: '';
+                            display: block;
+                            width: 0;
+                            height: 2px;
+                            background-color: $mexuri-gold;
+                            transition: width 0.3s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav-auth {
+
+            button {
+                margin: 0 0.5rem;
+                padding: 0.6rem 2rem;
+                font-size: 1.1rem;
+                font-weight: 500;
+                border-radius: 2rem;
+                transition: all 0.3s ease-in-out;
+
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+
+            .login-btn {
+                border: 1px solid $mexuri-gold;
+                background-color: transparent;
+                color: $primary-white;
+                outline: none;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: $mexuri-gold;
+                    color: black;
+                }
+            }
+
+            .SignUp-btn {
+                border: none;
+                background-color: $mexuri-gold;
+            }
+        }
+    }
+}
+
+.navbar-container-mobile {
+    width: 100%;
+    padding: 0.8rem 0;
+    backdrop-filter: blur(35px);
+    background-color: rgba(0, 0, 0, 0.48);
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+
+    .nav-main {
+        margin: 0 1rem;
+
+        .logo-closeBtn {
+            @include Flex(row, space-between, center);
+
+            .img {
+                img {
+                    width: 120px;
+                }
+            }
+
+            .left-nav {
+                @include Flex(row, center, center);
+
+                .login-btn {
+                    background-color: transparent;
+                    color: $primary-white;
+                    padding: 0.7rem 1rem;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    border: none;
+                    margin: 0 1rem 0 0;
+                    outline: none;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background-color: $mexuri-gold;
+                        color: black;
+                    }
+                }
+
+                .closeBtn {
+                    svg {
+                        width: 1.8rem;
+                        height: 1.8rem;
+                        transition: all 0.6s ease-in-out;
+                        fill: lighten($mexuri-gold, 60);
+
+                        &:active {
+                            transform: rotateX(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-navlink {
+    width: 100%;
+    padding: 1rem 0 0 1rem;
+    backdrop-filter: blur(35px);
+    background-color: lighten($primary-black, 14);
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+
+    @media (min-width: 900px) {
+        display: none;
+    }
+
+    .nav-links {
+        margin: 4rem 0 0 0;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+
+            li {
+                a {
+                    text-decoration: none;
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    color: $primary-white;
+                    transition: color 0.3s ease;
+
+                    &::before {
+                        content: "";
+                        width: 100%;
+                        color: #e2e2e2;
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-auth {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 1.5rem;
+
+        a {
+            width: 60%;
+            display: flex;
+            text-decoration: none;
+            justify-content: left;
+        }
+
+        .SignUp-btn {
+            width: 100%;
+            padding: 0.6rem 1.2rem;
+            font-size: 1.3rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .SignUp-btn {
+            background-color: $mexuri-gold;
+            color: $primary-black;
+
+            &:hover {
+                background-color: darken($mexuri-gold, 20);
+            }
+        }
+    }
+
+}

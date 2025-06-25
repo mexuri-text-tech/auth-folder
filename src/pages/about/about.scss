@@ -1,0 +1,447 @@
+@use '../../lib' as *;
+
+//Mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.about_container {
+    margin: 2rem auto 0 auto;
+    width: 100%;
+    max-width: 1600px;
+    scroll-behavior: smooth;
+    @include Flex(column, center, center);
+    background-color: $mexuri-gold;
+
+    .about_main {
+        width: 100%;
+
+        section {
+            margin: 0 auto 0.2rem auto;
+            background: lighten($primary-black, 3);
+        }
+
+        .intro {
+            padding: 2rem;
+            height: 100%;
+
+            @media (max-width: 900px) {
+                padding: 1.2rem;
+            }
+
+            .heading {
+                width: 100%;
+                margin: 0 auto;
+
+                h1 {
+                    font-size: 4rem;
+                    font-weight: 600;
+                    text-align: center;
+                    color: white;
+                    margin: 0 auto;
+
+                    @media (max-width: 900px) {
+                        font-size: 3rem;
+                        font-weight: 800;
+                        margin: 2rem 0 0 0;
+                    }
+
+                    img {
+                        object-fit: cover;
+                        width: 230px;
+
+                        @media (max-width: 900px) {
+                            width: 170px;
+                        }
+                    }
+                }
+            }
+
+            .write-up {
+                width: 100%;
+                margin: 0 auto;
+                @include Flex(row, center, center);
+
+                @media (max-width: 900px) {
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    padding: 0 4rem;
+                    text-align: center;
+                    color: darken($primary-white, 5);
+
+                    @media (max-width: 900px) {
+                        padding: 0;
+                    }
+                }
+            }
+
+            .team-image {
+                width: 100%;
+                margin: 1rem auto;
+                @include Flex(row, center, center);
+
+                img {
+                    width: 100%;
+                    height: 500px;
+                    object-fit: cover;
+                    border-radius: 2rem;
+                    margin: 0 auto;
+
+                    @media (max-width: 900px) {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+
+        .vision {
+            padding: 2rem;
+            height: 100%;
+
+            @media (max-width: 900px) {
+                padding: 1.2rem;
+            }
+
+            .heading {
+                width: 100%;
+
+                h1 {
+                    font-size: 4rem;
+                    text-align: right;
+                    font-weight: 700;
+                    color: $mexuri-gold;
+
+                    @media (max-width: 900px) {
+                        font-size: 3rem;
+                        text-align: center;
+                    }
+                }
+            }
+
+            figure {
+                padding: 0;
+                @include Flex(row, center, center);
+
+                @media (max-width: 900px) {
+                    @include Flex(column, center, center);
+                }
+
+                .img {
+                    width: 100%;
+                    height: 27rem;
+                    overflow: hidden;
+                    border-radius: 2rem;
+                    margin: 2rem auto;
+
+                    @media (max-width: 900px) {
+                        height: 100%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+
+                .figcaption {
+                    @include Flex(column, space-between, flex-end);
+                    width: 100%;
+
+                    .paragraph {
+                        width: 80%;
+
+                        @media (max-width: 900px) {
+                            width: 100%;
+                        }
+
+                        p {
+                            line-height: 1.6;
+                            margin-bottom: 1.5rem;
+
+                            &:first-child {
+                                font-weight: 500;
+                                font-size: 1.2rem;
+                                color: darken($primary-white, 10);
+                                position: relative;
+                                padding-left: 1.5rem;
+
+                                @media (max-width: 900px) {
+                                    position: none;
+                                    padding: 0;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0.5rem;
+                                    height: 80%;
+                                    width: 4px;
+                                    background: linear-gradient(to bottom, $mexuri-gold, orange);
+                                    border-radius: 2px;
+
+                                    @media (max-width: 900px) {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            &:last-child {
+                                background: lighten($primary-black, 10);
+                                padding: 1.5rem;
+                                color: darken($primary-white, 10);
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                border-radius: 8px;
+                                border-left: 4px solid $mexuri-gold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .services {
+            padding: 2rem;
+            height: 100%;
+
+            .heading {
+                width: 100%;
+                margin: 0 auto 2rem auto;
+
+                h1 {
+                    font-size: 4rem;
+                    text-align: center;
+                    font-weight: 700;
+                    color: $mexuri-gold;
+
+                    @media (max-width: 900px) {
+                        font-size: 3rem;
+                        text-align: center;
+                    }
+                }
+
+                hr {
+                    width: 17rem;
+                    display: flex;
+                    margin: 0 auto;
+                    height: 4px;
+                    background-color: $mexuri-gold;
+                    border: 0;
+
+                    @media (max-width: 900px) {
+                        width: 6rem;
+                    }
+                }
+            }
+
+            .feats {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+                gap: 2rem;
+            }
+
+            .feat-card {
+                background: lighten($primary-black, 6.5);
+                padding: 1.5rem;
+                transition: all 0.3s ease-in-out;
+                border-radius: 1rem;
+
+                &:hover {
+                    transform: translateY(-10px);
+                }
+
+                @media (max-width: 900px) {
+                    border: none;
+                }
+
+                figure {
+                    width: 100%;
+
+                    .featimg {
+                        width: 100%;
+                        overflow: hidden;
+                        border-radius: 1rem;
+
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            border-radius: 1rem;
+                            transition: transform 0.3s ease-in-out;
+
+                            &:hover {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+
+                    figcaption {
+                        width: 100%;
+                        margin: 0 auto;
+
+                        h2 {
+                            text-align: center;
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            margin: 0.5rem auto;
+                            color: $mexuri-gold;
+                        }
+
+                        p {
+                            height: 5rem;
+                            color: $primary-white;
+
+                            @media (max-width: 900px) {
+                                height: auto;
+                            }
+                        }
+
+                        a {
+                            text-decoration: none;
+
+                            button {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0.5rem 1rem;
+                                border: none;
+                                border-radius: 1rem;
+                                background-color: $mexuri-gold;
+                                color: $primary-black;
+                                font-weight: 600;
+                                cursor: pointer;
+                                font-size: 1rem;
+                                margin: 1rem auto;
+                                transition: all 0.3s ease-in-out;
+
+                                &::after {
+                                    content: '';
+                                    display: block;
+                                    transition: all 0.3s ease-in-out;
+                                }
+
+                                &:hover {
+                                    background-color: darken($mexuri-gold, 5);
+
+                                    &::after {
+                                        content: '→';
+                                        display: block;
+                                        padding: 0 0 0 1rem;
+                                    }
+                                }
+
+                                &:active {
+                                    background-color: darken($mexuri-gold, 5);
+                                    transform: scale(0.95);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .cta {
+            padding: 8rem 1rem;
+            @include Flex(column, center, center);
+            height: 30vh;
+            max-height: 100%;
+            background: linear-gradient(140deg, rgba($primary-black, 0.5), rgba($primary-black, 0.6)),
+                url('../../assets/image/Image_fx\ \(24\).jpg') no-repeat center center/cover;
+
+            @media (max-width: 900px) {
+                height: 40vh;
+            }
+
+            .heading {
+                h1 {
+                    @include Flex(column, center, center);
+                    font-size: 3rem;
+                    font-weight: 600;
+                    color: $primary-white;
+                    text-align: center;
+                    padding: 0 1rem;
+
+                    @media (max-width: 900px) {
+                        font-size: 2rem;
+                        padding: 0 0.4rem;
+                    }
+
+                    span {
+                        font-size: 3rem;
+                        font-weight: 600;
+                        color: $mexuri-gold;
+
+
+                        @media (max-width: 900px) {
+                            font-size: 2rem;
+                            padding: 0 0.4rem;
+                        }
+                    }
+                }
+            }
+
+            .writeup {
+                padding: 2rem 9rem;
+
+                @media (max-width: 900px) {
+                    padding: 0 1rem;
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    text-align: center;
+                    color: darken($primary-white, 10);
+
+                    @media (max-width: 900px) {
+                        font-size: 1.2rem;
+                        padding: 1rem 0;
+                    }
+                }
+            }
+
+            .cta-btn {
+                button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0.5rem 1rem;
+                    border: none;
+                    outline: none;
+                    border-radius: 1rem;
+                    background-color: $mexuri-gold;
+                    color: $primary-black;
+                    font-weight: 500;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    margin: 1rem auto;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        background-color: darken($mexuri-gold, 5);
+                    }
+
+                    &:active {
+                        background-color: darken($mexuri-gold, 5);
+                        transform: scale(0.95);
+                    }
+                }
+            }
+        }
+    }
+}

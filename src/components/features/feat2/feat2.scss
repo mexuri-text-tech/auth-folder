@@ -1,0 +1,259 @@
+@use "../../../lib" as *;
+
+//Mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+.value-prop {
+    color: white;
+    width: 100%;
+    margin: 0.2rem auto 0 auto;
+    background: linear-gradient(135deg, lighten($primary-black, 5), darken($brown-accent, 35), darken($mexuri-gold, 48));
+
+    @media (max-width: 900px) {
+        margin: 0.2rem auto;
+    }
+
+    .main {
+
+        .header {
+            @include Flex(row, space-between, flex-end);
+            padding: 0 4.5rem;
+
+            @media (min-width: 270px) and (max-width: 760px) {
+                @include Flex(column, center, center);
+                width: 90%;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            .allP {
+                width: 550px;
+                padding: 0 0 1rem 0;
+                color: darken($primary-white, 20);
+                font-size: 1.2rem;
+
+                @media (min-width: 270px) and (max-width: 760px) {
+                    display: none;
+                }
+            }
+
+            .mobileP {
+                width: 100%;
+                padding: 0;
+                color: darken($primary-white, 20);
+                font-size: 1.2rem;
+                text-align: center;
+                display: none;
+
+                @media (min-width: 270px) and (max-width: 760px) {
+                    display: block;
+                }
+            }
+
+            h1 {
+                color: $primary-white;
+                text-align: right;
+                font-size: 4rem;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    color: $mexuri-gold;
+                    font-weight: 600;
+                }
+
+                @media (min-width: 270px) and (max-width: 760px) {
+                    font-size: 2.3rem;
+                    margin: 0.5rem auto;
+                    text-align: center;
+                }
+            }
+        }
+
+        .feats {
+            width: 100;
+
+            .web {
+                width: 95%;
+                margin: 4rem auto;
+
+                @media (max-width: 900px) {
+                    margin: 0 auto;
+                }
+
+                figure {
+                    @include Flex(row, space-between, center);
+                    background: darken($brown-accent, 27);
+                    margin: 3rem 0;
+                    padding: 3rem;
+                    border-radius: 2rem;
+
+                    @media (max-width: 900px) {
+                        @include Flex(column, center, center);
+                        padding: 1rem;
+                    }
+
+                    figcaption {
+                        width: 500px;
+
+                        @media (max-width: 900px) {
+                            width: 90%;
+                        }
+
+                        h1 {
+                            font-size: 3rem;
+                            font-weight: 600;
+                            color: $mexuri-gold;
+
+                            @media (max-width: 900px) {
+                                font-size: 2.3rem;
+                            }
+                        }
+
+                        p {
+                            font-size: 1.2rem;
+                            color: darken($primary-white, 20);
+
+                            @media (max-width: 900px) {
+                                font-size: 1.2rem;
+                            }
+                        }
+
+                        button {
+                            padding: 1rem 1.5rem;
+                            margin: 1rem auto;
+                            font-size: 1.1rem;
+                            border-radius: 2rem;
+                            border: none;
+                            background-color: darken($mexuri-gold, 4);
+                            font-weight: 600;
+                            color: $primary-black;
+                            transition: all 0.3s ease-in-out;
+
+                            @media (max-width: 900px) {
+                                font-size: 1.1rem;
+                                padding: 0.5rem 1rem;
+                                font-weight: 500;
+                            }
+
+                            &::after {
+                                content: "";
+                                transition: all 0.3s ease-in-out;
+                            }
+
+                            &:hover {
+                                &::after {
+                                    content: "→";
+                                    padding: 0 0 0 1rem;
+
+                                    @media (max-width: 900px) {
+                                        padding: 0 0 0 0.5rem;
+                                    }
+                                }
+                            }
+
+                            &:active {
+                                background-color: darken($mexuri-gold, 5);
+                                transform: scale(0.95);
+                            }
+                        }
+                    }
+
+                    .fig-image {
+                        video {
+                            width: 600px;
+                            border-radius: 3rem;
+
+                            @media (max-width: 900px) {
+                                width: 100%;
+                                max-height: 512px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .others {
+
+                @media (max-width: 900px) {
+                    margin: 0 auto;
+                }
+
+                .figure-grid {
+                    @include Flex(row, space-around, center);
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 0 0 4rem 0;
+
+                    @media (max-width: 900px) {
+                        @include Flex(column, center, center);
+                    }
+
+                    .fig1,
+                    .fig2 {
+                        @include Flex(column, center, center);
+                        width: 40%;
+                        background: darken($brown-accent, 27);
+                        padding: 2rem;
+                        border-radius: 1rem;
+
+                        @media (max-width: 900px) {
+                            width: 75%;
+                            margin: 2rem 0;
+                        }
+
+                        .fig-image {
+                            overflow: hidden;
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                                transition: transform 0.3s ease;
+
+                                &:hover {
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
+
+                        figcaption {
+                            .tag {
+                                position: absolute;
+                                margin: -3.6rem 0 0 0;
+                                padding: 1rem 3rem 1rem 3rem;
+                                background-color: rgba(0, 0, 0, 0.763);
+
+                                p {
+                                    text-transform: uppercase;
+                                    text-align: center;
+                                    font-weight: 800;
+                                    color: $mexuri-gold;
+                                }
+                            }
+
+                            h1 {
+                                font-size: 1.8rem;
+                                font-weight: 600;
+                                margin: 1rem auto;
+                                text-align: center;
+                                color: $mexuri-gold;
+                            }
+
+                            p {
+                                text-align: center;
+                                font-size: 1.2rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

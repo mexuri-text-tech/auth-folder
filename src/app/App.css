@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    scrollbar-width: none;
+}
+
+body {
+    background-color: #000;
+}
+
+button:active {
+    transform: scale(0.98);
+}
