@@ -286,3 +286,20 @@
   -o-object-position: center;
      object-position: center;
 }/*# sourceMappingURL=signup.css.map */
+
+.signup-container .main .left form .signup-alt {
+  margin: 1rem auto;
+}
+.signup-container .main .left form .signup-alt p {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.5rem;
+}
+@media (max-width: 900px) {
+  .signup-container .main .left form .signup-alt p {
+    font-size: 1.2rem;
+  }
+}
+.signup-container .main .left form .signup-alt p a {
+  color: #ffdf33;
+}

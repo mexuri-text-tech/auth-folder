@@ -6,8 +6,30 @@ import About from '../pages/about/about';
 import PricingPage from '../pages/pricing/pricing';
 import Login from '../auth/login/login';
 import SignupPage from '../auth/signup/signup';
-import ProfileSetupForm from '../auth/ profileSetup/profileSetup';
 import ProfilePage from '../pages/profile/profile';
+
+// Inside <Routes>:
+
+// fetchAndSaveUser.js (you can put it anywhere, e.g., /utils)
+export const fetchAndSaveUser = async () => {
+    try {
+        const res = await fetch(`${process.env.VITE_REACT_APP_API_URL}/auth/login/success`, {
+            method: "GET",
+            credentials: "include",
+        });
+        const data = await res.json();
+        if (data.user) {
+            localStorage.setItem("user", JSON.stringify({ user: data.user }));
+            // redirect to /profile or home if you want
+            window.location.href = "/profile";
+        }
+    } catch (err) {
+        console.error("Login failed", err);
+    }
+};
+
+
+
 
 function App() {
   return (
@@ -24,8 +46,6 @@ function App() {
           <Route path='/login' element={<Login />} />
 
           <Route path="/sign-up" element={<SignupPage />} />
-
-          <Route path='/profile-setup' element={<ProfileSetupForm />} />
 
           <Route path='/profile' element={<ProfilePage />} />
         </Routes>
