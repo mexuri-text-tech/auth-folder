@@ -6,7 +6,6 @@ import About from '../pages/about/about';
 import PricingPage from '../pages/pricing/pricing';
 import Login from '../auth/login/login';
 import SignupPage from '../auth/signup/signup';
-import ProfileSetupForm from '../auth/ profileSetup/profileSetup';
 import ProfilePage from '../pages/profile/profile';
 
 function App() {
@@ -24,8 +23,6 @@ function App() {
           <Route path='/login' element={<Login />} />
 
           <Route path="/sign-up" element={<SignupPage />} />
-
-          <Route path='/profile-setup' element={<ProfileSetupForm />} />
 
           <Route path='/profile' element={<ProfilePage />} />
         </Routes>

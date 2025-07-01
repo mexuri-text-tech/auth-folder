@@ -55,7 +55,7 @@
 }
 .login-container .main .left .header h1 {
   color: #FFFFFF;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   text-align: center;
   font-weight: 600;
@@ -67,7 +67,7 @@
 }
 .login-container .main .left .header p {
   color: #e6e6e6;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 @media (max-width: 900px) {
   .login-container .main .left .header p {
@@ -81,7 +81,7 @@
 .login-container .main .left form .emailSpan,
 .login-container .main .left form .passwordSpan {
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: #ffd700;
 }
 @media (max-width: 900px) {
