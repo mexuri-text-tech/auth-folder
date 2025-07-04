@@ -9,19 +9,19 @@ const Feat1 = () => {
             id: 1,
             image: brandVisibility,
             name: "Get Started",
-            description: "Olgita was eager to go into business, but had limited capital to start, with Mexuri Dropshipping, she was able to start her business and connect with vendors with the minimal capital.",
+            description: "Subscribe to the plan that suits your business the most and start your dream business with an online presence.",
         },
         {
             id: 2,
             image: scale,
             name: "Scale with Ease",
-            description: "Omoh Clothing started as a small home tailoring shop. Fueled by passion, it grew into a thriving boutique where every piece reflects its heartfelt journey.",
+            description: "Seamlessly upgrade your plan as your business evolves—without large upfront costs, just flexible, scalable progress.",
         },
         {
             id: 3,
             image: sales,
             name: "Make more sales",
-            description: "Daisy's Touch sales have improved remarkably since the got their beautiful website from Mexuri. The websited has helped them reach a wider audience.",
+            description: "Build strategic partnerships with larger brands to expand your reach, strengthen your reputation, and take your business to the next stage of success.",
         }
     ];
 

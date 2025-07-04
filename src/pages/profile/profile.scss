@@ -1,118 +1,237 @@
-// Variables
-$primary-color: #3498db;
-$secondary-color: #2c3e50;
-$light-gray: #ecf0f1;
-$text-color: #333;
-$border-radius: 8px;
-$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@use "../../lib/" as *;
 
-.profile-page {
-    margin: 0 auto;
-    background-color: white;
-    width: 1005;
-    padding: 2rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: $text-color;
-
-    .profile-header {
-        text-align: center;
-        margin-bottom: 2rem;
-
-        .profile-avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid $primary-color;
-            margin-bottom: 1rem;
-            box-shadow: $box-shadow;
-        }
-
-        h1 {
-            margin: 0.5rem 0;
-            color: $secondary-color;
-        }
-
-        h2 {
-            margin: 0.5rem 0;
-            color: $primary-color;
-            font-weight: 400;
-        }
-
-        .location {
-            color: lighten($text-color, 20%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-
-            &::before {
-                content: '📍';
-            }
-        }
-    }
-
-    .profile-content {
-        background: white;
-        border-radius: $border-radius;
-        padding: 2rem;
-        box-shadow: $box-shadow;
-
-        .profile-section {
-            margin-bottom: 2rem;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            h3 {
-                color: $secondary-color;
-                border-bottom: 2px solid $light-gray;
-                padding-bottom: 0.5rem;
-                margin-bottom: 1rem;
-            }
-        }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            list-style: none;
-            padding: 0;
-
-            li {
-                background: $light-gray;
-                padding: 0.5rem 1rem;
-                border-radius: $border-radius;
-                color: $secondary-color;
-            }
-        }
-
-        a {
-            color: $primary-color;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+//Mixin
+@mixin Flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
 }
 
-// Responsive adjustments
-@media (max-width: 600px) {
-    .profile-page {
-        padding: 1rem;
+.profile-container {
+    width: 100%;
 
-        .profile-header {
-            .profile-avatar {
-                width: 120px;
-                height: 120px;
+    .container-main {
+        width: 100%;
+
+        .nav {
+            .nav1 {
+                width: 100%;
+                background-color: lighten($primary-black, 10);
+                padding: 1rem 0;
+                position: fixed;
+                margin: 0 auto;
+                display: flex;
+                top: 0;
+                z-index: 1000;
+
+                .main {
+                    @include Flex(row, space-between, center);
+                    width: 95%;
+                    max-width: 1600px;
+                    margin: 0 auto;
+
+                    .logo {
+                        img {
+                            width: 100px;
+                        }
+                    }
+
+                    .search-bar {
+                        width: 80%;
+
+                        input[type="search"] {
+                            width: 100%;
+                            border-radius: 2rem;
+                            border: none;
+                            padding: 0.8rem 1.5rem;
+                            outline: none;
+                            font-size: 1.1rem;
+
+                            &::placeholder {
+                                font-size: 1.1rem;
+                            }
+                        }
+                    }
+
+                    .profile-icon {
+
+                        border-radius: 50%;
+                        width: 2.8rem;
+                        height: 2.8rem;
+
+                        img {
+                            width: 2.8rem;
+                            height: 2.8rem;
+                            border-radius: 50%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+
+            .nav2 {
+                width: 100%;
+                background-color: lighten($primary-black, 20);
+                padding: 1rem 0;
+                position: fixed;
+                top: 0;
+                z-index: 100;
+
+                .main {
+                    margin: 5rem auto 0 auto;
+                    max-width: 1600px;
+
+                    ul {
+                        width: 70%;
+                        @include Flex(row, space-between, center);
+                        margin: 0 auto;
+
+                        li {
+                            color: white;
+                            list-style: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease-in-out;
+                            font-weight: 600;
+
+                            &:hover {
+                                color: $mexuri-gold;
+                            }
+
+                            &:active {
+                                transform: scale(0.95);
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        .profile-content {
-            padding: 1rem;
+        section {
+            .template-filter-class {
+                margin: 10rem auto 0 auto;
+                color: white;
+                border: none;
+                width: 95%;
+                max-width: 1600px;
+                @include Flex(row, space-between, center);
+
+                .filterButton {
+                    button {
+                        padding: 0.8rem 1.2rem;
+                        border: none;
+                        font-size: 1.1rem;
+                        font-weight: 500;
+                        background-color: $mexuri-gold;
+                        border-radius: 3rem;
+                        @include Flex(row, center, center);
+
+                        svg {
+                            fill: $primary-black;
+                        }
+                    }
+                }
+
+                .filters {
+
+                    ul {
+                        @include Flex(row, space-between, center);
+                        gap: 2rem;
+                        border: none;
+                        width: 900px;
+                        height: 3rem;
+                        background-color: lighten($primary-black, 20);
+                        padding: 0.5rem 2rem;
+                        border-radius: 4rem;
+                        overflow: scroll;
+
+                        li {
+                            text-decoration: none;
+                            list-style: none;
+                            transition: all 0.1s ease-in-out;
+
+                            &:hover {
+                                background: lighten($primary-black, 10);
+                                border-radius: 3rem;
+                                padding: 0.7rem 1rem;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
         }
+
+        .template-class {
+            padding: 2rem;
+            background-color: #000;
+            min-height: 100vh;
+
+            .main {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            figure {
+                background: #111;
+                color: $mexuri-gold;
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 6px 12px rgba(255, 215, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                .img {
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: block;
+                        border-bottom: 2px solid $mexuri-gold;
+                    }
+                }
+
+                figcaption {
+                    padding: 1rem;
+
+                    .title {
+                        h2 {
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                            text-align: center;
+                            color: $mexuri-gold;
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+
+                    .button {
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 1rem;
+
+                        .favouriteBtn {
+                            background: transparent;
+                            border: 1px solid $mexuri-gold;
+                            color: $mexuri-gold;
+                            padding: 0.5rem 1.2rem;
+                            font-size: 1.2rem;
+                            border-radius: 999px;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                background: $mexuri-gold;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
